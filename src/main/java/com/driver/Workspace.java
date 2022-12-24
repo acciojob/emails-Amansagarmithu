@@ -32,7 +32,7 @@ public class Workspace extends Gmail{
         int count = 0;
         int j = 0;
         for(int i = 1;i<calendar.size();i++){
-            if(calendar.get(j).getEndTime().compareTo(calendar.get(i).getStartTime())<=0){
+            if(calendar.get(j).getEndTime().compareTo(calendar.get(i).getStartTime())<0){
                 count++;
             }
             j++;
