@@ -33,12 +33,12 @@ public class Workspace extends Gmail{
         if(calendar.size()==0) return 0;
         Collections.sort(calendar,(s1,s2) -> s1.getEndTime().compareTo(s2.getEndTime()));
         int count = 1;
-        int j = 0;
-        for(int i = 1;i<calendar.size();i++){
-            if(calendar.get(j).getEndTime().compareTo(calendar.get(i).getStartTime())<0){
+        LocalTime currentime = calendar.get(0).getEndTime();
+        for(Meeting m : calendar){
+            if(currentime.compareTo(m.getStartTime())<0){
                 count++;
+                currentime = m.getEndTime();
             }
-            j++;
         }
         return count;
     }
