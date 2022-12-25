@@ -21,8 +21,10 @@ public class Workspace extends Gmail{
     public void addMeeting(Meeting meeting){
         //add the meeting to calendar
         calendar.add(meeting);
+    }
 
-
+    public ArrayList<Meeting> getCalendar() {
+        return calendar;
     }
 
     public int findMaxMeetings(){
