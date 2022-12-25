@@ -36,6 +36,8 @@ public class Workspace extends Gmail{
             if(tf==false){
                 count++;
                 tf = true;
+                j++;
+                continue;
             }
             if(calendar.get(j).getEndTime().compareTo(calendar.get(i).getStartTime())<0){
                 count++;
